@@ -30,7 +30,8 @@ RUN build_pkgs=" \
 # Note: The server wasn't working for me, so I switched to another.
 
 # Was: ENV TOR_VERSION 0.3.0.13
-ENV TOR_VERSION 0.3.1.9
+# Was: ENV TOR_VERSION 0.3.1.9
+ENV TOR_VERSION 0.3.2.9
 
 # Was: ENV TOR_GPG_KEY 0x4E2C6E8793298290
 ENV TOR_GPG_KEY 0x6AFEE6D49E92B601
