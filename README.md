@@ -14,6 +14,6 @@ Based on foertel/rpi-alpine-tor by Felix Oertel "https://github.com/foertel"
 Currently works on Tor versions:
 - 0.3.0.13
 - 0.3.1.9
-- 0.3.2.8-rc
+- 0.3.2.9
 
 Just set the TOR_VERSION variable as needed.
