@@ -31,13 +31,14 @@ RUN build_pkgs=" \
 
 # Was: ENV TOR_VERSION 0.3.0.13
 # Was: ENV TOR_VERSION 0.3.1.9
-ENV TOR_VERSION 0.3.2.9
+ENV TOR_VERSION 0.3.2.10
 
 # Was: ENV TOR_GPG_KEY 0x4E2C6E8793298290
 ENV TOR_GPG_KEY 0x6AFEE6D49E92B601
 
 # Was: ENV PGP_KEY_SERVER pool.sks-keyservers.net
-ENV PGP_KEY_SERVER pgp.mit.edu
+# Was: ENV PGP_KEY_SERVER pgp.mit.edu
+ENV PGP_KEY_SERVER ha.pool.sks-keyservers.net
 
 # Download the source files for Tor, and the signiture that goes with it. Verify the sig matches,
 # and then compile. Lastly, quickly tidy up.
