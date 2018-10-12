@@ -16,7 +16,6 @@ Currently works on Tor versions:
 - 0.3.1.9
 - 0.3.2.10
 - 0.3.3.8
-
-Note: As of writing, 0.3.3.9 has been released but the signing check fails.
+- 0.3.4.8
 
 Just set the TOR_VERSION variable as needed, but probably use the latest one!
