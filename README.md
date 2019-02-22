@@ -17,5 +17,6 @@ Currently works on Tor versions:
 - 0.3.2.10
 - 0.3.3.8
 - 0.3.4.8
+- 0.3.5.8
 
 Just set the TOR_VERSION variable as needed, but probably use the latest one!
