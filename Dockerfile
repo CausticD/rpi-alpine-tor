@@ -3,6 +3,11 @@ MAINTAINER Chris Davison
 
 # Based on foertel/rpi-alpine-tor by Felix Oertel "https://github.com/foertel"
 
+# - For the latest version, browse to: https://www.torproject.org/dist/
+# - To read about the signing process, go here: https://www.torproject.org/docs/verifying-signatures.html.en
+# - For the GPG Key itself, see here: https://www.torproject.org/docs/signing-keys.html.en
+# - Alternate servers found here: https://github.com/nodejs/docker-node/issues/380
+
 EXPOSE 9050
 
 # Prepare the basic alpine based image. Add the various key packages.
@@ -22,22 +27,18 @@ RUN build_pkgs=" \
 
 # Set important values here. These are split up so that if the process fails, you can change them
 # and re-run the tor specific part of the process, starting here. 
-# - For the latest version, browse to: https://www.torproject.org/dist/
-# - To read about the signing process, go here: https://www.torproject.org/docs/verifying-signatures.html.en
-# - For the GPG Key itself, see here: https://www.torproject.org/docs/signing-keys.html.en
-# - Alternate servers found here: https://github.com/nodejs/docker-node/issues/380
-#
-# Note: The server wasn't working for me, so I switched to another.
 
-# Was: ENV TOR_VERSION 0.3.0.13
-# Was: ENV TOR_VERSION 0.3.1.9
-# Was: ENV TOR_VERSION 0.3.2.10
-# Was: ENV TOR_VERSION 0.3.3.8
-# Was: ENV TOR_VERSION 0.3.4.8
-ENV TOR_VERSION 0.3.5.8
+# IMPORTANT: This is a required argument. You must use "--build-arg TOR_VERSION=0.3.5.8" or 
+# "--build-arg TOR_VERSION=0.4.0.2-alpha" etc. Set this to the version you want. For example:
+#
+# build.sh
+#   TOR_VERSION="0.3.4.11"
+#   docker build -t causticd/rpi-alpine-tor:$TOR_VERSION --build-arg TOR_VERSION=$TOR_VERSION .
+#
+
+ARG TOR_VERSION
 
 ENV TOR_GPG_KEY 0x6AFEE6D49E92B601
-
 ENV PGP_KEY_SERVER pool.sks-keyservers.net
 
 # Download the source files for Tor, and the signiture that goes with it. Verify the sig matches,
