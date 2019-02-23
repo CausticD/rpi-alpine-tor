@@ -12,11 +12,9 @@ This Dockerfile will create a SOCKS5 proxy, available on port 9050, designed for
 Based on foertel/rpi-alpine-tor by Felix Oertel "https://github.com/foertel"
 
 Currently works on Tor versions:
-- 0.3.0.13
-- 0.3.1.9
-- 0.3.2.10
-- 0.3.3.8
-- 0.3.4.8
 - 0.3.5.8
+- 0.4.0.2-alpha
 
 Just set the TOR_VERSION variable as needed, but probably use the latest one!
+
+Available for use from https://hub.docker.com/r/causticd/rpi-alpine-tor
